@@ -1,190 +1,290 @@
-/* Reset basic rules */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #000000;
+    background-color: #050505;
     color: #ffffff;
-    font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Header & Navigation Layout */
+/* Header Styling - Completely Centered */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 60px;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 100;
-}
-
-header .logo {
-    font-family: 'Cinzel', serif;
-    font-size: 36px;
-    font-weight: 700;
-    letter-spacing: 4px;
-    color: #ffffff;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-}
-
-/* Light blue tint color on hover for navigation links */
-nav ul li a:hover {
-    color: #a4dbff; 
-}
-
-/* Hero Section Formatting */
-.hero {
-    height: 85vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-bottom: 2px solid #39ff14; /* Neon Green Accent Line */
+    padding: 30px 20px;
     text-align: center;
-    position: relative;
-    padding-top: 100px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.hero-content {
-    position: relative;
-}
-
-/* Background text overlay styling */
-.main-title-bg {
-    font-family: 'Cinzel', serif;
-    font-size: 90px;
-    color: rgba(255, 255, 255, 0.07);
-    position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    letter-spacing: 10px;
-}
-
-/* Neon Glowing Main Text styling */
-.main-title-glow {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 72px;
-    color: #3fa37b; /* Darker mint green base */
-    text-shadow: 0 0 15px rgba(63, 163, 123, 0.6), 0 0 30px rgba(63, 163, 123, 0.3);
-    position: relative;
-    z-index: 2;
-    letter-spacing: 2px;
-}
-
-.subtitle {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 32px;
-    margin: 20px 0;
-    letter-spacing: 2px;
-}
-
-/* Stream / Download Button styling */
-.cta-btn {
-    display: inline-block;
-    padding: 12px 35px;
-    border: 1px solid #3fa37b;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 14px;
-    letter-spacing: 2px;
-    background: transparent;
-    transition: all 0.3s ease;
-    margin-top: 10px;
-}
-
-.cta-btn:hover {
-    background-color: #3fa37b;
-    color: #000000;
-    box-shadow: 0 0 15px rgba(63, 163, 123, 0.5);
-}
-
-/* Product Section & Showcase Grid */
-.products-section {
-    padding: 20px 60px 80px 60px;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    max-width: 1400px;
+.header-container {
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.product-card {
+.site-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #fff;
+    text-shadow: 0 0 10px #39ff14;
+    margin-bottom: 5px;
+}
+
+.site-subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 6px;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #39ff14;
+    text-shadow: 0 0 5px #39ff14;
+}
+
+.cart-icon {
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: inline-block;
+    padding: 5px 15px;
+    border: 1px solid #333;
+    border-radius: 20px;
+    background: #111;
+}
+
+/* Main Layout */
+main {
+    flex: 1; /* Ensures main takes up space pushing footer to bottom */
+    padding-bottom: 60px;
+}
+
+section {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
     text-align: center;
-    transition: transform 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(17,17,17,0.8) 100%);
+    padding: 120px 20px;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.hero p {
+    color: #ccc;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #39ff14;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 25px #39ff14;
+    transform: translateY(-2px);
+}
+
+/* Shop / Product Grid */
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #39ff14;
+    margin: 10px auto 0 auto;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.product-card {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 25px;
+    width: 300px;
+    transition: 0.3s;
 }
 
 .product-card:hover {
+    border-color: #39ff14;
     transform: translateY(-5px);
 }
 
-.img-container {
-    background-color: #000;
+.product-img-placeholder {
+    width: 100%;
+    height: 220px;
+    background: #1a1a1a;
+    border-radius: 8px;
     margin-bottom: 20px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    color: #666;
+    overflow: hidden;
 }
 
-.img-container img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
+.product-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.product-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 18px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: #ffffff;
-    margin-top: 15px;
+.product-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
-/* Responsive adjustments for smaller windows */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
+.price {
+    color: #39ff14;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid #39ff14;
+    color: #39ff14;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background: #39ff14;
+    color: #000;
+}
+
+/* Portfolio Section */
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.portfolio-item {
+    background: #0d0d0d;
+    border-left: 4px solid #39ff14;
+    padding: 25px;
+    flex: 1;
+    min-width: 280px;
+    text-align: left;
+}
+
+.portfolio-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.portfolio-item p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+/* About Section */
+.about-content {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #bbb;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* Footer Styling - Centered and at the absolute bottom */
+footer {
+    background: #000;
+    border-top: 1px solid #111;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: auto; /* Pushes footer to bottom */
+}
+
+.footer-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+footer p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.footer-sub {
+    margin-top: 5px;
+    color: #39ff14 !important;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 600px) {
+    .nav-links {
+        gap: 15px;
     }
-    
-    .main-title-bg {
-        font-size: 60px;
-        top: -35px;
-    }
-    
-    .main-title-glow {
-        font-size: 50px;
-    }
-    
-    .subtitle {
-        font-size: 24px;
+    .site-title {
+        font-size: 2rem;
     }
 }
