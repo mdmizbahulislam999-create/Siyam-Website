@@ -1,0 +1,190 @@
+/* Reset basic rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Header & Navigation Layout */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 60px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+header .logo {
+    font-family: 'Cinzel', serif;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #ffffff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+/* Light blue tint color on hover for navigation links */
+nav ul li a:hover {
+    color: #a4dbff; 
+}
+
+/* Hero Section Formatting */
+.hero {
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding-top: 100px;
+}
+
+.hero-content {
+    position: relative;
+}
+
+/* Background text overlay styling */
+.main-title-bg {
+    font-family: 'Cinzel', serif;
+    font-size: 90px;
+    color: rgba(255, 255, 255, 0.07);
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    letter-spacing: 10px;
+}
+
+/* Neon Glowing Main Text styling */
+.main-title-glow {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 72px;
+    color: #3fa37b; /* Darker mint green base */
+    text-shadow: 0 0 15px rgba(63, 163, 123, 0.6), 0 0 30px rgba(63, 163, 123, 0.3);
+    position: relative;
+    z-index: 2;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 32px;
+    margin: 20px 0;
+    letter-spacing: 2px;
+}
+
+/* Stream / Download Button styling */
+.cta-btn {
+    display: inline-block;
+    padding: 12px 35px;
+    border: 1px solid #3fa37b;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 2px;
+    background: transparent;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.cta-btn:hover {
+    background-color: #3fa37b;
+    color: #000000;
+    box-shadow: 0 0 15px rgba(63, 163, 123, 0.5);
+}
+
+/* Product Section & Showcase Grid */
+.products-section {
+    padding: 20px 60px 80px 60px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.product-card {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.img-container {
+    background-color: #000;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.product-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-top: 15px;
+}
+
+/* Responsive adjustments for smaller windows */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .main-title-bg {
+        font-size: 60px;
+        top: -35px;
+    }
+    
+    .main-title-glow {
+        font-size: 50px;
+    }
+    
+    .subtitle {
+        font-size: 24px;
+    }
+}
